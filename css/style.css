@@ -838,6 +838,9 @@ header {
   text-align: center;
   border-top: 0.8px solid #ffffff;
 }
+.contact_section input {
+  color: #000000;
+}
 
 .footer_section a {
   color: inherit;
