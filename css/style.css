@@ -90,8 +90,8 @@ a:focus {
 
 header {
   background-color: #d1e3ff;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .header_section .header_top {
@@ -151,6 +151,27 @@ header {
 .custom_nav-container .navbar-nav .nav-item:hover .nav-link, .custom_nav-container .navbar-nav .nav-item.active .nav-link {
   color: #0355cc;
 }
+.custom_nav-container .navbar-nav .nav-item {
+  position: relative;
+  overflow: hidden;
+  margin-inline: 3px;
+}
+
+.custom_nav-container .navbar-nav .nav-item::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 2px;
+  background-color:#0355cc;
+  left: 100%;
+  bottom: 0;
+  transition: left 0.5s ease;
+}
+.custom_nav-container .navbar-nav  .nav-item:hover::after ,
+.custom_nav-container .navbar-nav .nav-item.active::after{
+  left: 0;
+}
+
 
 .custom_nav-container .form-inline .nav_search-btn {
   width: 35px;
@@ -754,6 +775,7 @@ header {
 .info_section a {
   margin: 0 5px;
   color: #0355cc;
+  transition: color 0.3s ease
 }
 
 .info_section a i {
@@ -812,6 +834,19 @@ header {
 
 .info_items {
   position: relative;
+}
+
+.info_items .item .img-box  {
+  animation: boucing 0.5s ease-in-out infinite;
+}
+
+@keyframes boucing {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .info_items::before {
